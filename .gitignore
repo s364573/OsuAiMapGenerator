@@ -1,0 +1,12 @@
+.claude/
+.flash/
+28107 DJ Fresh - Gold Dust/
+audio.mp3
+checkpoints/
+generated.osu
+key.txt
+key.txt.pub
+loss_curve.png
+mlflow.db
+mlruns/
+venv/
