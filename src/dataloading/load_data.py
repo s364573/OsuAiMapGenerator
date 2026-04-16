@@ -5,7 +5,7 @@ from pathlib import Path
 # ─────────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────────
-SONGS_FOLDER = Path(r"C:\Users\alepa\AppData\Local\osu!\Songs")
+SONGS_FOLDER = Path(r"/workspace/Songs")
 OUTPUT_JSON  = "song_data.json"
 
 TRIGGER_WORDS = [
