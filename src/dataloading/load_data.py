@@ -5,7 +5,7 @@ from pathlib import Path
 # ─────────────────────────────────────────────
 # CONFIG
 # ─────────────────────────────────────────────
-SONGS_FOLDER = Path(r"/workspace/Songs")
+SONGS_FOLDER = Path(r"C:/Personal Projects/osuaimap_generator/network_volume/Songs")
 OUTPUT_JSON  = "song_data.json"
 
 TRIGGER_WORDS = [

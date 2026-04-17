@@ -112,7 +112,7 @@ def generer_map(
                 "x":         max(0, min(511, int(x * PLAYFIELD_X))),
                 "y":         max(0, min(383, int(y_pos * PLAYFIELD_Y))),
                 "timestamp": timestamp_ms,
-                "type":      1 if circle >= slider else 2,
+                "type":      1,
             })
 
     print(f"  Generert:   {len(noter)} noter")
@@ -161,12 +161,16 @@ def generer_map(
         f.write("SliderMultiplier:1.4\n")
         f.write("SliderTickRate:1\n\n")
 
+        f.write("[Events]\n")
+        f.write("//Background and Video events\n")
+        f.write("//Break Periods\n\n")
+
         f.write("[TimingPoints]\n")
         f.write(f"0,{ms_per_beat:.6f},4,2,0,100,1,0\n\n")
 
         f.write("[HitObjects]\n")
         for note in filtrerte:
-            note_type = note["type"]
+            note_type = 1
             # Legg til ny combo på første note og hver 8. note
             idx = filtrerte.index(note)
             if idx == 0 or idx % 8 == 0:
@@ -186,7 +190,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Generer osu! beatmap fra MP3")
     parser.add_argument("--audio",      required=True,              help="Sti til MP3-fil")
     parser.add_argument("--output",     default="generated.osu",    help="Output .osu fil")
-    parser.add_argument("--model",      default="checkpoints/beatmap_model.pth", help="Sti til modell")
+    parser.add_argument("--model",      default="checkpoints/beatmap_model_epoch3_epoch18.pth", help="Sti til modell")
     parser.add_argument("--ar",         type=float, default=9.0,    help="Approach Rate (0-10)")
     parser.add_argument("--od",         type=float, default=8.0,    help="Overall Difficulty (0-10)")
     parser.add_argument("--cs",         type=float, default=4.0,    help="Circle Size (0-7)")

@@ -10,3 +10,6 @@ loss_curve.png
 mlflow.db
 mlruns/
 venv/
+song_data.json
+hard_data.json
+network_volume/
