@@ -12,4 +12,8 @@ mlruns/
 venv/
 song_data.json
 hard_data.json
-network_volume/
+network_volume/"song_data.json" 
+"hard_data.json" 
+"*.pth" 
+"mlflow.db" 
+"network_volume/" 
